@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Psychology - Knowledge Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 20px;
+            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .ad-space {
+            background: #e0e0e0;
+            border: 2px dashed #999;
+            padding: 20px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1200px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin: 3rem 0 2rem;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .topic-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .topic-card h3 {
+            color: #8b5cf6;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .topic-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .topic-card a {
+            display: inline-block;
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .topic-card a:hover {
+            color: #6d28d9;
+        }
+        
+        .sidebar-ad {
+            background: #e0e0e0;
+            border: 2px dashed #999;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-weight: bold;
+            height: 600px;
+            position: sticky;
+            top: 20px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar-ad {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🧠 Money Psychology</div>
+            <a href="index.html" class="back-link">← Back to Main</a>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h1>Understand Your Financial Mind</h1>
+        <p>Comprehensive guides to help you transform your money mindset</p>
+    </div>
+    
+    <div class="ad-space">
+        AD SPACE - 728x90 Banner
+    </div>
+    
+    <div class="container">
+        <div class="main-content">
+            <h2 class="section-title">Explore Our Topics</h2>
+            
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3>💭 Money Mindset Transformation</h3>
+                    <p>Change your beliefs about money and wealth. Identify limiting beliefs, develop abundant thinking, and reprogram your financial subconscious.</p>
+                    <a href="psychology-page1.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>🎲 Behavioral Finance</h3>
+                    <p>Understand why we make irrational financial decisions. Learn about cognitive biases, herd mentality, loss aversion, and emotional investing.</p>
+                    <a href="psychology-page2.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>😰 Overcoming Money Anxiety</h3>
+                    <p>Conquer financial stress and worry. Develop healthy coping mechanisms, reduce money-related anxiety, and find peace with your finances.</p>
+                    <a href="psychology-page3.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>🔄 Building Wealth Habits</h3>
+                    <p>Create automatic wealth-building behaviors. Master habit formation, eliminate destructive patterns, and develop millionaire routines.</p>
+                    <a href="psychology-page4.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>👨‍👩‍👧 Money in Relationships</h3>
+                    <p>Navigate finances in partnerships and families. Handle money conflicts, communicate about finances, and align financial values with loved ones.</p>
+                    <a href="psychology-page5.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>🎯 Scarcity vs Abundance</h3>
+                    <p>Shift from poverty to prosperity thinking. Understand scarcity mindset triggers and cultivate an abundance mentality for financial success.</p>
+                    <a href="psychology-page6.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>🧬 Money Scripts & Beliefs</h3>
+                    <p>Discover your inherited money stories. Identify patterns learned in childhood, understand family financial dynamics, and rewrite your money script.</p>
+                    <a href="psychology-page7.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>💸 Emotional Spending</h3>
+                    <p>Break free from retail therapy and impulse buying. Understand emotional triggers, develop healthier coping strategies, and control spending urges.</p>
+                    <a href="psychology-page8.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>🎭 Money Personality Types</h3>
+                    <p>Identify your financial personality. Learn whether you're a spender, saver, avoider, or worshipper, and how to optimize your natural tendencies.</p>
+                    <a href="psychology-page9.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>🏆 Financial Self-Worth</h3>
+                    <p>Build confidence around money. Overcome feelings of unworthiness, develop healthy self-esteem regarding wealth, and believe you deserve financial success.</p>
+                    <a href="psychology-page10.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>🔮 Money & Happiness</h3>
+                    <p>Understand the true relationship between wealth and wellbeing. Learn how much money actually increases happiness and what truly matters for life satisfaction.</p>
+                    <a href="psychology-page11.html">Read More →</a>
+                </div>
+                
+                <div class="topic-card">
+                    <h3>⚡ Financial Trauma Healing</h3>
+                    <p>Recover from past money traumas. Address financial PTSD, heal from bankruptcy or loss, and rebuild a healthy relationship with money after hardship.</p>
+                    <a href="psychology-page12.html">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="ad-space">
+                AD SPACE - 728x90 Banner
+            </div>
+        </div>
+        
+        <div class="sidebar-ad">
+            AD SPACE<br>300x600<br>Sidebar Ad
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Knowledge Hub - Money Psychology. Educational purposes only.</p>
+    </footer>
+</body>
+</html>
