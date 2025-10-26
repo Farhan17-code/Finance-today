@@ -29,12 +29,27 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
             font-size: 2rem;
             font-weight: bold;
-            margin-bottom: 1rem;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
         }
         
         .hero {
@@ -164,6 +179,10 @@
             .sidebar-ad {
                 display: none;
             }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
         }
     </style>
 </head>
@@ -171,6 +190,7 @@
     <header>
         <nav>
             <div class="logo">💰 Financial Learning Hub</div>
+            <a href="index.html" class="back-link">← Back to Home</a>
         </nav>
     </header>
     
@@ -193,7 +213,7 @@
                     <div class="topic-card">
                         <h3>📚 15 Essential Financial Advice</h3>
                         <p>Learn the fundamental principles that can transform your financial life. From budgeting to investing, discover timeless wisdom.</p>
-                        <a href="page1.html">Read More →</a>
+                        <a href="15-essential-financial-advice.html">Read More →</a>
                     </div>
                     
                     <div class="topic-card">
