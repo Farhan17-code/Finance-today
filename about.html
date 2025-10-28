@@ -3,56 +3,609 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Finance Today</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About Us - Knowledge Hub</title>
+    <meta name="description" content="Learn about Knowledge Hub's mission to empower learners with expert knowledge in finance, marketing, negotiation, psychology, and sports.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 5rem 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        h3 {
+            color: #334155;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: #475569;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-section {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border-left: 6px solid #3b82f6;
+        }
+        
+        .highlight-section h3 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-section p {
+            color: #1e40af;
+            font-size: 1.15rem;
+            line-height: 2;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .category-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .category-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-card h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .category-card p {
+            color: #64748b;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #eab308;
+        }
+        
+        .value-card h4 {
+            color: #854d0e;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .value-card p {
+            color: #713f12;
+            font-size: 1rem;
+        }
+        
+        .team-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+        
+        .team-section h3 {
+            color: #166534;
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-section p {
+            color: #15803d;
+        }
+        
+        .commitment-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .commitment-list li {
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+            color: #334155;
+            font-size: 1.05rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .commitment-list li strong {
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 4rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 0;
+        }
+        
+        .footer-links {
+            margin-top: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-section {
+                padding: 2.5rem;
+            }
+            
+            .category-grid,
+            .stats-section,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <h1>Finance Today</h1>
-            <!-- Include your existing navigation -->
+            <div class="logo">🎓 Knowledge Hub</div>
+            <a href="index.html" class="back-link">← Back to Home</a>
         </nav>
     </header>
-
-    <main class="legal-page">
-        <h1>About Finance Today</h1>
-
-        <h2>Our Mission</h2>
-        <p>Finance Today is a comprehensive educational platform dedicated to empowering individuals with knowledge across five critical domains: Financial Education, Marketing Mastery, Negotiation Skills, Money Psychology, and Sports Knowledge.</p>
-
-        <p>We believe that true success comes from mastering not just one area, but developing a holistic understanding of how finance, psychology, communication, and strategic thinking intersect in both personal and professional life.</p>
-
-        <h2>What We Offer</h2>
-        <p>Our platform provides in-depth, research-backed articles and guides that help you:</p>
-        <ul>
-            <li><strong>Build Financial Literacy:</strong> From basic budgeting to advanced investment strategies</li>
-            <li><strong>Master Modern Marketing:</strong> Digital strategies, branding, and growth techniques</li>
-            <li><strong>Negotiate Effectively:</strong> Personal and professional negotiation tactics</li>
-            <li><strong>Understand Money Psychology:</strong> The behavioral patterns that drive financial decisions</li>
-            <li><strong>Learn from Sports:</strong> Apply athletic discipline and peak performance principles to life</li>
-        </ul>
-
-        <h2>Our Approach</h2>
-        <p>Every article on Finance Today is crafted to provide:</p>
-        <ul>
-            <li>Actionable insights you can implement immediately</li>
-            <li>Evidence-based information from reliable sources</li>
-            <li>Clear explanations of complex concepts</li>
-            <li>Real-world examples and case studies</li>
-        </ul>
-
-        <h2>Who We Serve</h2>
-        <p>Whether you're a student beginning your financial journey, a professional looking to advance your career, an entrepreneur building a business, or simply someone committed to lifelong learning, Finance Today provides the knowledge you need to succeed.</p>
-
-        <h2>Our Commitment</h2>
-        <p>We are committed to maintaining the highest standards of content quality, accuracy, and relevance. Our team continuously researches and updates our content to ensure you have access to the most current and valuable information.</p>
-
-        <h2>Get In Touch</h2>
-        <p>We value your feedback and questions. Please visit our <a href="contact.html">Contact Page</a> to get in touch with us.</p>
-    </main>
-
+    
+    <div class="hero">
+        <h1>About Knowledge Hub</h1>
+        <p>Empowering millions of learners worldwide to master essential life skills through comprehensive, accessible, and actionable education</p>
+    </div>
+    
+    <div class="container">
+        <div class="content-section">
+            <h2>Our Story: Why Knowledge Hub Exists</h2>
+            <p>Knowledge Hub was born from a fundamental belief: that access to quality education should not be limited by geography, income, or institutional gatekeeping. In 2024, as the world became increasingly complex and interconnected, we recognized a critical gap in the educational landscape.</p>
+            
+            <p>Traditional education systems excel at teaching theoretical concepts but often fail to equip people with practical, real-world skills needed for financial success, career advancement, and personal fulfillment. Meanwhile, the explosion of online content created a different problem: information overload without quality control. People were drowning in superficial content, unable to find deep, comprehensive, and trustworthy educational resources.</p>
+            
+            <p>We asked ourselves: What if there was a single destination where anyone could access expert-level knowledge across the most important domains of modern life? What if we could combine the depth of university-level education with the accessibility of online learning and the practicality of real-world application?</p>
+            
+            <p>Knowledge Hub is our answer to these questions. We've created a comprehensive educational platform focusing on five critical skill areas that, when mastered, dramatically improve quality of life: Financial Education, Marketing Mastery, Negotiation Skills, Money Psychology, and Sports Knowledge.</p>
+            
+            <div class="highlight-section">
+                <h3>Our Mission Statement</h3>
+                <p>To democratize access to world-class education by providing comprehensive, actionable, and continuously updated content that empowers individuals to achieve financial freedom, professional excellence, and personal growth—regardless of their starting point or circumstances.</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>What Makes Knowledge Hub Different</h2>
+            
+            <h3>1. Depth Over Breadth</h3>
+            <p>While many websites offer superficial overviews, we dive deep. Each topic is explored comprehensively, with context, examples, case studies, and actionable insights. Our articles are not 500-word summaries—they're 1500-3000 word comprehensive guides designed to truly educate, not just inform.</p>
+            
+            <h3>2. Practical Application Focus</h3>
+            <p>Theory without application is entertainment. Every piece of content on Knowledge Hub emphasizes practical implementation. We don't just explain concepts; we show you how to apply them to your specific situations, with step-by-step guidance, templates, and real-world examples.</p>
+            
+            <h3>3. Multi-Disciplinary Integration</h3>
+            <p>Real-world problems don't exist in silos. Financial success requires understanding marketing (to increase income), negotiation (to maximize value), psychology (to manage emotions and behaviors), and discipline (often learned through sports). We connect these disciplines, showing how they reinforce and complement each other.</p>
+            
+            <h3>4. Evidence-Based Content</h3>
+            <p>We prioritize accuracy and reliability. Our content is researched, fact-checked, and grounded in proven principles, peer-reviewed research, and documented real-world results. We cite sources, acknowledge limitations, and update content as new information emerges.</p>
+            
+            <h3>5. Accessible to All Learning Levels</h3>
+            <p>Whether you're a complete beginner or an experienced professional looking to deepen expertise, our content meets you where you are. We explain complex topics clearly without dumbing them down, using analogies, examples, and progressive learning paths.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Our Five Pillars of Knowledge</h2>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">💰</div>
+                    <h3>Financial Education</h3>
+                    <p>Master personal finance, investing, wealth building, asset management, and financial security. Learn from historical crises, understand banking systems, avoid scams, and build disciplined financial habits that create lasting wealth. Our financial content empowers you to take control of your economic future with confidence and knowledge.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3>Marketing Mastery</h3>
+                    <p>Discover modern marketing principles, digital strategies, social media tactics, content creation, branding, analytics, and growth hacking. Whether building a business, advancing your career, or creating a personal brand, our marketing content provides proven frameworks and actionable tactics that drive real results in today's competitive landscape.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🤝</div>
+                    <h3>Negotiation Skills</h3>
+                    <p>Learn the art and science of negotiation through proven techniques, psychological insights, and practical strategies. Master salary negotiations, business deals, conflict resolution, persuasion, and cross-cultural communication. Our negotiation content helps you achieve better outcomes while building stronger relationships and maintaining integrity.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🧠</div>
+                    <h3>Money Psychology</h3>
+                    <p>Transform your relationship with money by understanding behavioral finance, cognitive biases, emotional spending, money scripts, and wealth-building mindsets. Explore the psychological patterns that drive financial decisions, overcome limiting beliefs, and develop the mental frameworks that separate financially successful people from everyone else.</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">⚽</div>
+                    <h3>Sports Knowledge</h3>
+                    <p>Dive into athletic excellence, training science, sports psychology, legendary athletes, business of sports, and competitive mindset development. Learn principles of peak performance, mental toughness, discipline, and goal achievement that apply far beyond athletics to every area of life and business.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Our Commitment to Quality</h2>
+            
+            <ul class="commitment-list">
+                <li>
+                    <strong>Comprehensive Research</strong>
+                    Every article undergoes thorough research using credible sources, academic studies, expert interviews, and real-world data. We don't publish unverified claims or clickbait content.
+                </li>
+                
+                <li>
+                    <strong>Editorial Standards</strong>
+                    Our content follows strict editorial guidelines ensuring accuracy, clarity, objectivity, and practical value. Every piece is reviewed for factual correctness and educational merit.
+                </li>
+                
+                <li>
+                    <strong>Regular Updates</strong>
+                    Knowledge evolves, and so does our content. We regularly review and update articles to reflect new research, changing market conditions, and emerging best practices.
+                </li>
+                
+                <li>
+                    <strong>User-Centric Design</strong>
+                    Our website is designed for learning, not distraction. Clean layouts, clear navigation, readable fonts, and thoughtful organization make finding and absorbing information effortless.
+                </li>
+                
+                <li>
+                    <strong>Privacy and Ethics</strong>
+                    We respect your privacy and are transparent about our practices. We use Google AdSense to keep our content freely accessible, but we never compromise content quality or user experience for advertising revenue.
+                </li>
+                
+                <li>
+                    <strong>Accessible Education</strong>
+                    All our core educational content is freely available. We believe financial constraints should never prevent someone from learning essential life skills.
+                </li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2>Our Core Values</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>🎯 Excellence</h4>
+                    <p>We pursue excellence in every article, guide, and resource. Quality over quantity, always. Our reputation is built on delivering exceptional educational value.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h4>🔍 Integrity</h4>
+                    <p>We provide honest, unbiased information. No hidden agendas, no sponsored content masquerading as education, no manipulation. Our loyalty is to truth and our readers.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h4>🌍 Accessibility</h4>
+                    <p>Education should be available to everyone, everywhere. We remove barriers—financial, geographic, and technological—that prevent people from learning.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h4>💪 Empowerment</h4>
+                    <p>Knowledge is power when it's actionable. We don't just inform—we equip you with tools, frameworks, and confidence to take action and create change.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h4>🔄 Continuous Improvement</h4>
+                    <p>We're committed to constant evolution based on user feedback, new research, and changing needs. Excellence is a journey, not a destination.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h4>🤝 Community</h4>
+                    <p>We're building a global community of learners who support, challenge, and inspire each other toward excellence and achievement.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Who We Serve</h2>
+            
+            <p><strong>Ambitious Professionals:</strong> Career-focused individuals seeking to enhance skills in marketing, negotiation, and financial management to accelerate professional growth and maximize earning potential.</p>
+            
+            <p><strong>Entrepreneurs and Business Builders:</strong> Founders and business owners needing practical knowledge in marketing, negotiation, financial management, and psychological resilience to build and scale successful ventures.</p>
+            
+            <p><strong>Students and Recent Graduates:</strong> Young adults recognizing that traditional education left critical gaps in practical life skills. They're proactively seeking knowledge that schools didn't teach but employers and life demand.</p>
+            
+            <p><strong>Financial Freedom Seekers:</strong> Individuals committed to taking control of their financial destiny through education, disciplined action, and informed decision-making rather than hoping for luck or quick fixes.</p>
+            
+            <p><strong>Lifelong Learners:</strong> Curious, growth-oriented people who understand that learning never stops. They're committed to continuous improvement and mastering new skills that enhance life quality and career prospects.</p>
+            
+            <p><strong>Career Changers:</strong> Professionals pivoting to new industries or roles who need to quickly build competency in areas like digital marketing, financial analysis, or negotiation to successfully transition.</p>
+            
+            <p><strong>Parents and Educators:</strong> Those seeking to teach essential life skills to children and students, using our content as curriculum and reference materials for financial literacy and personal development education.</p>
+        </div>
+        
+        <div class="team-section">
+            <h3>Our Team and Expertise</h3>
+            <p>Knowledge Hub is built by a diverse team of subject matter experts, experienced educators, and skilled content creators who share a passion for democratizing education. Our contributors include:</p>
+            
+            <p><strong>Financial Professionals:</strong> CPAs, financial advisors, investment analysts, and wealth managers with decades of combined experience in personal and corporate finance.</p>
+            
+            <p><strong>Marketing Experts:</strong> Digital marketers, brand strategists, content creators, and growth hackers who've built successful campaigns for startups and Fortune 500 companies.</p>
+            
+            <p><strong>Negotiation Specialists:</strong> Business consultants, mediators, sales professionals, and executive coaches who've facilitated millions in deals and resolved complex conflicts.</p>
+            
+            <p><strong>Psychology Researchers:</strong> Behavioral economists, clinical psychologists, and researchers specializing in decision-making, habits, and behavioral change.</p>
+            
+            <p><strong>Sports Professionals:</strong> Coaches, athletes, sports scientists, and performance psychologists who understand peak performance principles applicable to all life domains.</p>
+            
+            <p>While our contributors bring deep expertise, they share a common gift: the ability to explain complex topics clearly and engagingly, making advanced knowledge accessible to everyone.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Our Impact and Reach</h2>
+            
+            <div class="stats-section">
+                <div class="stat-box">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Core Disciplines</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">In-Depth Articles</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free Access</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Learning Potential</div>
+                </div>
+            </div>
+            
+            <p>Since our launch, Knowledge Hub has become a trusted resource for thousands of learners worldwide seeking reliable, comprehensive educational content. Our readers span continents, industries, and backgrounds, united by a commitment to continuous learning and personal excellence.</p>
+            
+            <p>We measure success not by page views or ad clicks, but by the transformations in our readers' lives: the salary increase someone negotiated after mastering our negotiation content, the business launched using our marketing frameworks, the financial security achieved through our financial education, the confidence gained from understanding money psychology.</p>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Join Thousands of Learners Mastering Essential Skills</h2>
+            <p>Your journey to financial freedom, professional excellence, and personal mastery starts here. Explore our comprehensive content library and transform your knowledge into action.</p>
+            <a href="index.html" class="cta-button">Start Learning Today</a>
+        </div>
+        
+        <div class="content-section">
+            <h2>Transparency and Monetization</h2>
+            <p>Knowledge Hub is supported through Google AdSense advertising. We display relevant advertisements to keep our comprehensive educational content freely accessible to everyone worldwide.</p>
+            
+            <p>We want to be completely transparent: we earn revenue when ads are displayed and clicked. However, we maintain strict editorial independence. Advertising never influences our content, recommendations, or educational integrity. We don't accept sponsored content, paid placements, or promotional disguised as education.</p>
+            
+            <p>Our content quality and your trust matter more than short-term revenue. We carefully balance monetization with user experience, ensuring ads don't detract from your learning experience.</p>
+            
+            <p>For complete details about data collection and ad practices, please review our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Contact Us</h2>
+            <p>We value feedback, questions, and suggestions from our learning community. Whether you have content requests, technical issues, partnership inquiries, or just want to share how Knowledge Hub has impacted your life, we want to hear from you.</p>
+            
+            <p><strong>General Inquiries:</strong> contact@knowledgehub.com</p>
+            <p><strong>Content Suggestions:</strong> content@knowledgehub.com</p>
+            <p><strong>Technical Support:</strong> support@knowledgehub.com</p>
+            <p><strong>Partnerships:</strong> partnerships@knowledgehub.com</p>
+            
+            <p>Or use our <a href="contact.html">Contact Form</a> for a quick response.</p>
+            
+            <div class="highlight-section">
+                <h3>Your Success Is Our Mission</h3>
+                <p>Thank you for choosing Knowledge Hub as your learning partner. We're honored to be part of your educational journey and committed to providing the highest quality content to support your goals. Together, we're building a world where essential life skills are accessible to everyone, and knowledge truly becomes power.</p>
+                <p style="margin-top: 1rem;"><strong>Welcome to Knowledge Hub. Your transformation begins now.</strong></p>
+            </div>
+        </div>
+    </div>
+    
     <footer>
-        <!-- Your footer content -->
+        <p>&copy; 2025 Knowledge Hub. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Empowering learners worldwide with quality educational content</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
     </footer>
 </body>
 </html>
