@@ -80,24 +80,10 @@
             opacity: 0.9;
         }
         
-        .ad-space {
-            background: #e0e0e0;
-            border: 2px dashed #999;
-            padding: 20px;
-            text-align: center;
-            margin: 20px auto;
-            max-width: 1200px;
-            color: #666;
-            font-weight: bold;
-        }
-        
         .container {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 2rem;
         }
         
         .categories-grid {
@@ -125,6 +111,9 @@
         .category-card.negotiation { border-color: #10b981; }
         .category-card.psychology { border-color: #8b5cf6; }
         .category-card.sports { border-color: #ef4444; }
+        .category-card.personal { border-color: #06b6d4; }
+        .category-card.business { border-color: #ec4899; }
+        .category-card.health { border-color: #84cc16; }
         
         .category-header {
             display: flex;
@@ -147,6 +136,9 @@
         .negotiation .category-title h2 { color: #10b981; }
         .psychology .category-title h2 { color: #8b5cf6; }
         .sports .category-title h2 { color: #ef4444; }
+        .personal .category-title h2 { color: #06b6d4; }
+        .business .category-title h2 { color: #ec4899; }
+        .health .category-title h2 { color: #84cc16; }
         
         .category-title p {
             color: #64748b;
@@ -180,17 +172,24 @@
         .negotiation .category-link { background: #10b981; }
         .psychology .category-link { background: #8b5cf6; }
         .sports .category-link { background: #ef4444; }
+        .personal .category-link { background: #06b6d4; }
+        .business .category-link { background: #ec4899; }
+        .health .category-link { background: #84cc16; }
         
-        .sidebar-ad {
-            background: #e0e0e0;
-            border: 2px dashed #999;
-            padding: 20px;
+        .section-divider {
+            margin: 4rem 0;
             text-align: center;
-            color: #666;
-            font-weight: bold;
-            height: 600px;
-            position: sticky;
-            top: 20px;
+        }
+        
+        .section-divider h2 {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        
+        .section-divider p {
+            color: #64748b;
+            font-size: 1.2rem;
         }
         
         footer {
@@ -221,14 +220,6 @@
         @media (max-width: 968px) {
             .hero h1 {
                 font-size: 2.5rem;
-            }
-            
-            .container {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar-ad {
-                display: none;
             }
             
             .category-card {
@@ -263,9 +254,10 @@
     </header>
     
     <div class="hero">
-        <h1>Master 5 Essential Skills</h1>
-        <p>Transform your life with expert knowledge in finance, marketing, negotiation, psychology, and sports</p>
+        <h1>Master 18 Essential Skills</h1>
+        <p>Transform your life with expert knowledge across multiple domains</p>
     </div>
+    
     <div class="container">
         <div class="categories-grid">
             
@@ -343,8 +335,202 @@
                 </div>
                 <a href="sports-home.html" class="category-link">Read More →</a>
             </div>
+            
+            <!-- PERSONAL DEVELOPMENT -->
+            <div class="category-card personal">
+                <div class="category-header">
+                    <div class="category-icon">🌱</div>
+                    <div class="category-title">
+                        <h2>Personal Development</h2>
+                        <p>Transform Yourself</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Master goal setting, time management, productivity systems, and habit formation. Learn strategies for building confidence, overcoming procrastination, and achieving personal excellence. Discover methods for continuous self-improvement and unlocking your full potential through proven development frameworks.
+                </div>
+                <a href="personal-dev.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- LEADERSHIP -->
+            <div class="category-card business">
+                <div class="category-header">
+                    <div class="category-icon">👔</div>
+                    <div class="category-title">
+                        <h2>Leadership & Management</h2>
+                        <p>Lead Effectively</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Develop essential leadership skills including team building, decision making, conflict management, and strategic thinking. Learn how to inspire others, delegate effectively, and create high-performing teams. Understand different leadership styles and when to apply them for maximum impact.
+                </div>
+                <a href="leadership.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- ENTREPRENEURSHIP -->
+            <div class="category-card business">
+                <div class="category-header">
+                    <div class="category-icon">🚀</div>
+                    <div class="category-title">
+                        <h2>Entrepreneurship</h2>
+                        <p>Build Your Business</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Learn startup fundamentals, business model creation, customer validation, and growth strategies. Understand fundraising, product development, and scaling operations. Discover what separates successful entrepreneurs from dreamers and how to navigate the challenges of building a sustainable business.
+                </div>
+                <a href="entrepreneurship.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- COMMUNICATION -->
+            <div class="category-card negotiation">
+                <div class="category-header">
+                    <div class="category-icon">💬</div>
+                    <div class="category-title">
+                        <h2>Communication Skills</h2>
+                        <p>Connect Powerfully</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Master public speaking, persuasive writing, active listening, and interpersonal communication. Learn body language reading, presentation skills, and storytelling techniques. Understand how to communicate clearly across different mediums and audiences to build influence and strong relationships.
+                </div>
+                <a href="communication.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- CAREER DEVELOPMENT -->
+            <div class="category-card personal">
+                <div class="category-header">
+                    <div class="category-icon">📈</div>
+                    <div class="category-title">
+                        <h2>Career Development</h2>
+                        <p>Advance Your Career</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Navigate career transitions, job searches, resume building, and interview strategies. Learn networking techniques, personal branding, and skill development planning. Understand how to position yourself for promotions, negotiate job offers, and create a fulfilling career path aligned with your values.
+                </div>
+                <a href="career.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- PRODUCTIVITY -->
+            <div class="category-card personal">
+                <div class="category-header">
+                    <div class="category-icon">⚡</div>
+                    <div class="category-title">
+                        <h2>Productivity & Time Management</h2>
+                        <p>Maximize Your Output</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Master proven productivity systems like GTD, Pomodoro, and time blocking. Learn to prioritize effectively, eliminate distractions, and build workflows that multiply your output. Discover energy management, focus techniques, and how to work smarter rather than harder for sustainable high performance.
+                </div>
+                <a href="productivity.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- MENTAL HEALTH -->
+            <div class="category-card health">
+                <div class="category-header">
+                    <div class="category-icon">🧘</div>
+                    <div class="category-title">
+                        <h2>Mental Health & Wellness</h2>
+                        <p>Nurture Your Mind</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Understand stress management, anxiety reduction, and building emotional resilience. Learn mindfulness practices, meditation techniques, and cognitive behavioral strategies. Discover how to maintain mental wellbeing, recognize warning signs, and build support systems for sustainable psychological health.
+                </div>
+                <a href="mental-health.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- PHYSICAL FITNESS -->
+            <div class="category-card health">
+                <div class="category-header">
+                    <div class="category-icon">💪</div>
+                    <div class="category-title">
+                        <h2>Physical Fitness & Nutrition</h2>
+                        <p>Optimize Your Body</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Learn evidence-based training principles, nutrition fundamentals, and recovery strategies. Understand strength training, cardiovascular health, flexibility, and injury prevention. Discover how to create sustainable fitness habits, set realistic goals, and optimize physical performance for longevity and vitality.
+                </div>
+                <a href="fitness.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- RELATIONSHIPS -->
+            <div class="category-card psychology">
+                <div class="category-header">
+                    <div class="category-icon">❤️</div>
+                    <div class="category-title">
+                        <h2>Relationships & Social Skills</h2>
+                        <p>Build Meaningful Connections</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Master the art of building and maintaining healthy relationships. Learn conflict resolution, emotional intelligence, and communication in partnerships. Understand friendship dynamics, family relationships, and professional networking. Discover how to set boundaries and nurture connections that enrich your life.
+                </div>
+                <a href="relationships.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- TECHNOLOGY -->
+            <div class="category-card marketing">
+                <div class="category-header">
+                    <div class="category-icon">💻</div>
+                    <div class="category-title">
+                        <h2>Technology & Digital Skills</h2>
+                        <p>Navigate the Digital World</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Stay current with essential digital skills including basic coding, data analysis, AI tools, and cybersecurity. Learn to leverage technology for productivity, understand emerging trends, and protect your digital presence. Discover how to adapt to rapid technological change and remain relevant in the digital age.
+                </div>
+                <a href="technology.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- CRITICAL THINKING -->
+            <div class="category-card psychology">
+                <div class="category-header">
+                    <div class="category-icon">🔍</div>
+                    <div class="category-title">
+                        <h2>Critical Thinking & Problem Solving</h2>
+                        <p>Think More Effectively</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Develop analytical skills, logical reasoning, and systematic problem-solving approaches. Learn to identify biases, evaluate evidence, and make better decisions. Understand frameworks for complex problem solving, creative thinking techniques, and how to approach challenges strategically and systematically.
+                </div>
+                <a href="critical-thinking.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- CREATIVITY -->
+            <div class="category-card marketing">
+                <div class="category-header">
+                    <div class="category-icon">🎨</div>
+                    <div class="category-title">
+                        <h2>Creativity & Innovation</h2>
+                        <p>Unleash Your Creative Potential</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Learn techniques for generating ideas, overcoming creative blocks, and thinking innovatively. Understand design thinking, brainstorming methods, and creative problem solving. Discover how to cultivate creativity, implement innovative solutions, and bring fresh perspectives to challenges in any field or industry.
+                </div>
+                <a href="creativity.html" class="category-link">Read More →</a>
+            </div>
+            
+            <!-- FINANCIAL PLANNING -->
+            <div class="category-card finance">
+                <div class="category-header">
+                    <div class="category-icon">📊</div>
+                    <div class="category-title">
+                        <h2>Financial Planning & Retirement</h2>
+                        <p>Secure Your Future</p>
+                    </div>
+                </div>
+                <div class="category-description">
+                    Master comprehensive financial planning including retirement strategies, estate planning, insurance needs, and tax optimization. Learn to create detailed financial plans, set retirement goals, and build portfolios aligned with life stages. Understand social security, pension options, and creating sustainable retirement income.
+                </div>
+                <a href="financial-planning.html" class="category-link">Read More →</a>
+            </div>
         </div>
-        
     </div>
     
     <footer>
