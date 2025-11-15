@@ -1,549 +1,527 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knowledge Hub - Master 18 Essential Life Skills</title>
+    <meta name="description" content="Master 18 essential life skills including finance, marketing, negotiation, and more">
+    <title>Knowledge Hub - Master 18 Essential Skills</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f4f4f4;
+            background: #f5f5f5;
         }
-        
-        header {
+
+        /* Mobile-first navigation */
+        nav {
             background: linear-gradient(135deg, #1e293b 0%, #764ba2 100%);
-            color: white;
             padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
-        nav {
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
-        
+
         .logo {
-            font-size: 2.5rem;
+            color: white;
+            font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            text-decoration: none;
         }
-        
-        .tagline {
-            opacity: 0.9;
-            font-size: 1.2rem;
-        }
-        
+
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
         }
-        
+
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
-        
+
         .nav-links a:hover {
-            opacity: 0.8;
+            background: rgba(255,255,255,0.2);
         }
-        
+
+        /* Hero Section */
         .hero {
-            text-align: center;
-            padding: 5rem 20px;
-            background: linear-gradient(135deg,#1e293b 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #764ba2 100%);
             color: white;
+            padding: 2rem 1rem;
+            text-align: center;
         }
-        
+
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
         }
-        
+
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        
+
+        /* Main Content */
         .container {
             max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 1rem;
         }
-        
-        .categories-grid {
+
+        .intro {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .intro h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Grid - Mobile First */
+        .skills-grid {
             display: grid;
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
         }
-        
-        .category-card {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            border-left: 8px solid;
+
+        /* Tablet */
+        @media (min-width: 600px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-        
-        .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-        }
-        
-        .category-card.finance { border-color: #667eea; }
-        .category-card.marketing { border-color: #f59e0b; }
-        .category-card.negotiation { border-color: #10b981; }
-        .category-card.psychology { border-color: #8b5cf6; }
-        .category-card.sports { border-color: #ef4444; }
-        .category-card.personal { border-color: #06b6d4; }
-        .category-card.business { border-color: #ec4899; }
-        .category-card.health { border-color: #84cc16; }
-        
-        .category-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .category-icon {
-            font-size: 4rem;
-            margin-right: 1.5rem;
-        }
-        
-        .category-title h2 {
-            font-size: 2.2rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .finance .category-title h2 { color: #667eea; }
-        .marketing .category-title h2 { color: #f59e0b; }
-        .negotiation .category-title h2 { color: #10b981; }
-        .psychology .category-title h2 { color: #8b5cf6; }
-        .sports .category-title h2 { color: #ef4444; }
-        .personal .category-title h2 { color: #06b6d4; }
-        .business .category-title h2 { color: #ec4899; }
-        .health .category-title h2 { color: #84cc16; }
-        
-        .category-title p {
-            color: #64748b;
-            font-size: 1.1rem;
-        }
-        
-        .category-description {
-            color: #475569;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        
-        .category-link {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: opacity 0.3s;
-        }
-        
-        .category-link:hover {
-            opacity: 0.9;
-        }
-        
-        .finance .category-link { background: #667eea; }
-        .marketing .category-link { background: #f59e0b; }
-        .negotiation .category-link { background: #10b981; }
-        .psychology .category-link { background: #8b5cf6; }
-        .sports .category-link { background: #ef4444; }
-        .personal .category-link { background: #06b6d4; }
-        .business .category-link { background: #ec4899; }
-        .health .category-link { background: #84cc16; }
-        
-        .section-divider {
-            margin: 4rem 0;
-            text-align: center;
-        }
-        
-        .section-divider h2 {
-            font-size: 2rem;
-            color: #1e293b;
-            margin-bottom: 1rem;
-        }
-        
-        .section-divider p {
-            color: #64748b;
-            font-size: 1.2rem;
-        }
-        
-        footer {
-            background:linear-gradient(135deg, #1e293b 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-        
-        .footer-links {
-            margin-top: 1rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1rem;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-        }
-        
-        @media (max-width: 968px) {
+
+        /* Desktop */
+        @media (min-width: 900px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .category-card {
-                padding: 2rem;
+            .hero p {
+                font-size: 1.1rem;
             }
-            
-            .category-icon {
-                font-size: 3rem;
+        }
+
+        /* Skill Card */
+        .skill-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* Different colors for each category */
+        .skill-card:nth-child(1) { border-left-color: #667eea; }
+        .skill-card:nth-child(2) { border-left-color: #f59e0b; }
+        .skill-card:nth-child(3) { border-left-color: #10b981; }
+        .skill-card:nth-child(4) { border-left-color: #8b5cf6; }
+        .skill-card:nth-child(5) { border-left-color: #ef4444; }
+        .skill-card:nth-child(6) { border-left-color: #06b6d4; }
+        .skill-card:nth-child(7) { border-left-color: #f97316; }
+        .skill-card:nth-child(8) { border-left-color: #ec4899; }
+        .skill-card:nth-child(9) { border-left-color: #14b8a6; }
+        .skill-card:nth-child(10) { border-left-color: #3b82f6; }
+        .skill-card:nth-child(11) { border-left-color: #a855f7; }
+        .skill-card:nth-child(12) { border-left-color: #84cc16; }
+        .skill-card:nth-child(13) { border-left-color: #f43f5e; }
+        .skill-card:nth-child(14) { border-left-color: #06b6d4; }
+        .skill-card:nth-child(15) { border-left-color: #6366f1; }
+        .skill-card:nth-child(16) { border-left-color: #eab308; }
+        .skill-card:nth-child(17) { border-left-color: #d946ef; }
+        .skill-card:nth-child(18) { border-left-color: #0ea5e9; }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .skill-card h4 {
+            font-size: 0.9rem;
+            color: #667eea;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: white;
+            background: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            background: #764ba2;
+            transform: translateX(5px);
+        }
+        
+        /* Different button colors matching border */
+        .skill-card:nth-child(1) .read-more { background: #667eea; }
+        .skill-card:nth-child(2) .read-more { background: #f59e0b; }
+        .skill-card:nth-child(3) .read-more { background: #10b981; }
+        .skill-card:nth-child(4) .read-more { background: #8b5cf6; }
+        .skill-card:nth-child(5) .read-more { background: #ef4444; }
+        .skill-card:nth-child(6) .read-more { background: #06b6d4; }
+        .skill-card:nth-child(7) .read-more { background: #f97316; }
+        .skill-card:nth-child(8) .read-more { background: #ec4899; }
+        .skill-card:nth-child(9) .read-more { background: #14b8a6; }
+        .skill-card:nth-child(10) .read-more { background: #3b82f6; }
+        .skill-card:nth-child(11) .read-more { background: #a855f7; }
+        .skill-card:nth-child(12) .read-more { background: #84cc16; }
+        .skill-card:nth-child(13) .read-more { background: #f43f5e; }
+        .skill-card:nth-child(14) .read-more { background: #06b6d4; }
+        .skill-card:nth-child(15) .read-more { background: #6366f1; }
+        .skill-card:nth-child(16) .read-more { background: #eab308; }
+        .skill-card:nth-child(17) .read-more { background: #d946ef; }
+        .skill-card:nth-child(18) .read-more { background: #0ea5e9; }
+        
+        .skill-card:nth-child(1) .read-more:hover { background: #5568d3; }
+        .skill-card:nth-child(2) .read-more:hover { background: #dc8b09; }
+        .skill-card:nth-child(3) .read-more:hover { background: #0ea372; }
+        .skill-card:nth-child(4) .read-more:hover { background: #7c3aed; }
+        .skill-card:nth-child(5) .read-more:hover { background: #dc2626; }
+        .skill-card:nth-child(6) .read-more:hover { background: #0891b2; }
+        .skill-card:nth-child(7) .read-more:hover { background: #ea580c; }
+        .skill-card:nth-child(8) .read-more:hover { background: #db2777; }
+        .skill-card:nth-child(9) .read-more:hover { background: #0d9488; }
+        .skill-card:nth-child(10) .read-more:hover { background: #2563eb; }
+        .skill-card:nth-child(11) .read-more:hover { background: #9333ea; }
+        .skill-card:nth-child(12) .read-more:hover { background: #65a30d; }
+        .skill-card:nth-child(13) .read-more:hover { background: #e11d48; }
+        .skill-card:nth-child(14) .read-more:hover { background: #0891b2; }
+        .skill-card:nth-child(15) .read-more:hover { background: #4f46e5; }
+        .skill-card:nth-child(16) .read-more:hover { background: #ca8a04; }
+        .skill-card:nth-child(17) .read-more:hover { background: #c026d3; }
+        .skill-card:nth-child(18) .read-more:hover { background: #0284c7; }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 599px) {
+            .nav-container {
+                justify-content: center;
             }
             
             .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .skill-card {
+                padding: 1.25rem;
+            }
+            
+            .skill-icon {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div>
-                <div class="logo">🎓 Knowledge Hub</div>
-                <div class="tagline">Your Complete Learning Platform for Life Success</div>
-            </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">🎓 Knowledge Hub</a>
             <div class="nav-links">
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="privacy-policy.html">Privacy Policy</a>
             </div>
-        </nav>
-    </header>
-    
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <div class="hero">
         <h1>Master 18 Essential Skills</h1>
-        <p>Transform your life with expert knowledge across multiple domains</p>
+        <p>Your Complete Learning Platform for Life Success</p>
     </div>
-    
+
+    <!-- Main Content -->
     <div class="container">
-        <div class="categories-grid">
-            
-            <!-- FINANCE -->
-            <div class="category-card finance">
-                <div class="category-header">
-                    <div class="category-icon">💰</div>
-                    <div class="category-title">
-                        <h2>Financial Education</h2>
-                        <p>Master Money & Wealth Building</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Discover everything from basic budgeting to advanced investing. Learn from financial crises, understand banking systems, protect yourself from scams, and master the art of asset management. Explore 15 comprehensive topics covering financial discipline, ethics, global economy, and the future of finance.
-                </div>
-                <a href="finance-home.html" class="category-link">Read More →</a>
+        <div class="intro">
+            <h2>Transform Your Life</h2>
+            <p>Explore expert knowledge across multiple domains</p>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+            <!-- Financial Education -->
+            <div class="skill-card">
+                <span class="skill-icon">💰</span>
+                <h3>Financial Education</h3>
+                <h4>Master Money & Wealth Building</h4>
+                <p>Discover everything from basic budgeting to advanced investing. Learn from financial crises, understand banking systems, and master asset management.</p>
+                <a href="finance-home.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- MARKETING -->
-            <div class="category-card marketing">
-                <div class="category-header">
-                    <div class="category-icon">📱</div>
-                    <div class="category-title">
-                        <h2>Marketing Mastery</h2>
-                        <p>Attract Customers & Build Brands</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Learn the art and science of marketing in the digital age. Master social media strategies, content creation, SEO, branding, and analytics. Understand consumer psychology, growth hacking techniques, and how to create compelling campaigns that convert. Build a powerful personal or business brand.
-                </div>
-                <a href="marketing-home.html" class="category-link">Read More →</a>
+
+            <!-- Marketing Mastery -->
+            <div class="skill-card">
+                <span class="skill-icon">📱</span>
+                <h3>Marketing Mastery</h3>
+                <h4>Attract Customers & Build Brands</h4>
+                <p>Learn the art of marketing in the digital age. Master social media, content creation, SEO, and analytics to build powerful brands.</p>
+                <a href="marketing-home.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- NEGOTIATION -->
-            <div class="category-card negotiation">
-                <div class="category-header">
-                    <div class="category-icon">🤝</div>
-                    <div class="category-title">
-                        <h2>Negotiation Skills</h2>
-                        <p>Get What You Want</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Master the art of negotiation in business and life. Learn salary negotiation tactics, deal-closing strategies, persuasion psychology, and conflict resolution. Discover how to create win-win outcomes, navigate cross-cultural negotiations, and develop the confidence to ask for what you deserve.
-                </div>
-                <a href="negotiation-home.html" class="category-link">Read More →</a>
+
+            <!-- Negotiation Skills -->
+            <div class="skill-card">
+                <span class="skill-icon">🤝</span>
+                <h3>Negotiation Skills</h3>
+                <h4>Get What You Want</h4>
+                <p>Master negotiation in business and life. Learn salary tactics, deal-closing strategies, and persuasion psychology.</p>
+                <a href="negotiation-home.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- PSYCHOLOGY -->
-            <div class="category-card psychology">
-                <div class="category-header">
-                    <div class="category-icon">🧠</div>
-                    <div class="category-title">
-                        <h2>Money Psychology</h2>
-                        <p>Understand Your Financial Mind</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Explore the hidden psychological forces driving financial decisions. Transform your money mindset, overcome financial anxiety, build wealth-creating habits, and understand behavioral finance. Learn how to navigate money in relationships and shift from scarcity to abundance thinking.
-                </div>
-                <a href="psychology-home.html" class="category-link">Read More →</a>
+
+            <!-- Money Psychology -->
+            <div class="skill-card">
+                <span class="skill-icon">🧠</span>
+                <h3>Money Psychology</h3>
+                <h4>Understand Your Financial Mind</h4>
+                <p>Explore psychological forces driving financial decisions. Transform your money mindset and build wealth-creating habits.</p>
+                <a href="psychology-home.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- SPORTS -->
-            <div class="category-card sports">
-                <div class="category-header">
-                    <div class="category-icon">⚽</div>
-                    <div class="category-title">
-                        <h2>Sports Knowledge</h2>
-                        <p>Excellence in Athletics</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Dive into the world of sports with insights on legendary athletes, historic moments, training science, and sports psychology. Explore the business of sports, understand peak performance strategies, and discover the rise of esports. Learn what makes champions and how to apply athletic principles to life.
-                </div>
-                <a href="sports-home.html" class="category-link">Read More →</a>
+
+            <!-- Sports Knowledge -->
+            <div class="skill-card">
+                <span class="skill-icon">⚽</span>
+                <h3>Sports Knowledge</h3>
+                <h4>Excellence in Athletics</h4>
+                <p>Dive into sports with insights on legendary athletes, training science, and sports psychology. Learn what makes champions.</p>
+                <a href="sports-home.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- PERSONAL DEVELOPMENT -->
-            <div class="category-card personal">
-                <div class="category-header">
-                    <div class="category-icon">🌱</div>
-                    <div class="category-title">
-                        <h2>Personal Development</h2>
-                        <p>Transform Yourself</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Master goal setting, time management, productivity systems, and habit formation. Learn strategies for building confidence, overcoming procrastination, and achieving personal excellence. Discover methods for continuous self-improvement and unlocking your full potential through proven development frameworks.
-                </div>
-                <a href="personal-dev.html" class="category-link">Read More →</a>
+
+            <!-- Personal Development -->
+            <div class="skill-card">
+                <span class="skill-icon">🌱</span>
+                <h3>Personal Development</h3>
+                <h4>Transform Yourself</h4>
+                <p>Master goal setting, time management, and habit formation. Build confidence and overcome procrastination.</p>
+                <a href="personal-dev.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- LEADERSHIP -->
-            <div class="category-card business">
-                <div class="category-header">
-                    <div class="category-icon">👔</div>
-                    <div class="category-title">
-                        <h2>Leadership & Management</h2>
-                        <p>Lead Effectively</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Develop essential leadership skills including team building, decision making, conflict management, and strategic thinking. Learn how to inspire others, delegate effectively, and create high-performing teams. Understand different leadership styles and when to apply them for maximum impact.
-                </div>
-                <a href="leadership.html" class="category-link">Read More →</a>
+
+            <!-- Leadership & Management -->
+            <div class="skill-card">
+                <span class="skill-icon">👔</span>
+                <h3>Leadership & Management</h3>
+                <h4>Lead Effectively</h4>
+                <p>Develop essential leadership skills including team building, decision making, and strategic thinking.</p>
+                <a href="leadership.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- ENTREPRENEURSHIP -->
-            <div class="category-card business">
-                <div class="category-header">
-                    <div class="category-icon">🚀</div>
-                    <div class="category-title">
-                        <h2>Entrepreneurship</h2>
-                        <p>Build Your Business</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Learn startup fundamentals, business model creation, customer validation, and growth strategies. Understand fundraising, product development, and scaling operations. Discover what separates successful entrepreneurs from dreamers and how to navigate the challenges of building a sustainable business.
-                </div>
-                <a href="entrepreneurship.html" class="category-link">Read More →</a>
+
+            <!-- Entrepreneurship -->
+            <div class="skill-card">
+                <span class="skill-icon">🚀</span>
+                <h3>Entrepreneurship</h3>
+                <h4>Build Your Business</h4>
+                <p>Learn startup fundamentals, business models, and growth strategies. Understand what separates successful entrepreneurs.</p>
+                <a href="entrepreneurship.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- COMMUNICATION -->
-            <div class="category-card negotiation">
-                <div class="category-header">
-                    <div class="category-icon">💬</div>
-                    <div class="category-title">
-                        <h2>Communication Skills</h2>
-                        <p>Connect Powerfully</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Master public speaking, persuasive writing, active listening, and interpersonal communication. Learn body language reading, presentation skills, and storytelling techniques. Understand how to communicate clearly across different mediums and audiences to build influence and strong relationships.
-                </div>
-                <a href="communication.html" class="category-link">Read More →</a>
+
+            <!-- Communication Skills -->
+            <div class="skill-card">
+                <span class="skill-icon">💬</span>
+                <h3>Communication Skills</h3>
+                <h4>Connect Powerfully</h4>
+                <p>Master public speaking, persuasive writing, and active listening. Learn storytelling and presentation skills.</p>
+                <a href="communication.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- CAREER DEVELOPMENT -->
-            <div class="category-card personal">
-                <div class="category-header">
-                    <div class="category-icon">📈</div>
-                    <div class="category-title">
-                        <h2>Career Development</h2>
-                        <p>Advance Your Career</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Navigate career transitions, job searches, resume building, and interview strategies. Learn networking techniques, personal branding, and skill development planning. Understand how to position yourself for promotions, negotiate job offers, and create a fulfilling career path aligned with your values.
-                </div>
-                <a href="career.html" class="category-link">Read More →</a>
+
+            <!-- Career Development -->
+            <div class="skill-card">
+                <span class="skill-icon">📈</span>
+                <h3>Career Development</h3>
+                <h4>Advance Your Career</h4>
+                <p>Navigate career transitions, job searches, and interviews. Learn networking and personal branding strategies.</p>
+                <a href="career.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- PRODUCTIVITY -->
-            <div class="category-card personal">
-                <div class="category-header">
-                    <div class="category-icon">⚡</div>
-                    <div class="category-title">
-                        <h2>Productivity & Time Management</h2>
-                        <p>Maximize Your Output</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Master proven productivity systems like GTD, Pomodoro, and time blocking. Learn to prioritize effectively, eliminate distractions, and build workflows that multiply your output. Discover energy management, focus techniques, and how to work smarter rather than harder for sustainable high performance.
-                </div>
-                <a href="productivity.html" class="category-link">Read More →</a>
+
+            <!-- Productivity -->
+            <div class="skill-card">
+                <span class="skill-icon">⚡</span>
+                <h3>Productivity & Time Management</h3>
+                <h4>Maximize Your Output</h4>
+                <p>Master productivity systems like GTD and Pomodoro. Learn to prioritize and eliminate distractions effectively.</p>
+                <a href="productivity.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- MENTAL HEALTH -->
-            <div class="category-card health">
-                <div class="category-header">
-                    <div class="category-icon">🧘</div>
-                    <div class="category-title">
-                        <h2>Mental Health & Wellness</h2>
-                        <p>Nurture Your Mind</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Understand stress management, anxiety reduction, and building emotional resilience. Learn mindfulness practices, meditation techniques, and cognitive behavioral strategies. Discover how to maintain mental wellbeing, recognize warning signs, and build support systems for sustainable psychological health.
-                </div>
-                <a href="mental-health.html" class="category-link">Read More →</a>
+
+            <!-- Mental Health -->
+            <div class="skill-card">
+                <span class="skill-icon">🧘</span>
+                <h3>Mental Health & Wellness</h3>
+                <h4>Nurture Your Mind</h4>
+                <p>Understand stress management and emotional resilience. Learn mindfulness and cognitive behavioral strategies.</p>
+                <a href="mental-health.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- PHYSICAL FITNESS -->
-            <div class="category-card health">
-                <div class="category-header">
-                    <div class="category-icon">💪</div>
-                    <div class="category-title">
-                        <h2>Physical Fitness & Nutrition</h2>
-                        <p>Optimize Your Body</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Learn evidence-based training principles, nutrition fundamentals, and recovery strategies. Understand strength training, cardiovascular health, flexibility, and injury prevention. Discover how to create sustainable fitness habits, set realistic goals, and optimize physical performance for longevity and vitality.
-                </div>
-                <a href="fitness.html" class="category-link">Read More →</a>
+
+            <!-- Fitness -->
+            <div class="skill-card">
+                <span class="skill-icon">💪</span>
+                <h3>Physical Fitness & Nutrition</h3>
+                <h4>Optimize Your Body</h4>
+                <p>Learn evidence-based training, nutrition fundamentals, and recovery strategies for optimal health.</p>
+                <a href="fitness.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- RELATIONSHIPS -->
-            <div class="category-card psychology">
-                <div class="category-header">
-                    <div class="category-icon">❤️</div>
-                    <div class="category-title">
-                        <h2>Relationships & Social Skills</h2>
-                        <p>Build Meaningful Connections</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Master the art of building and maintaining healthy relationships. Learn conflict resolution, emotional intelligence, and communication in partnerships. Understand friendship dynamics, family relationships, and professional networking. Discover how to set boundaries and nurture connections that enrich your life.
-                </div>
-                <a href="relationships.html" class="category-link">Read More →</a>
+
+            <!-- Relationships -->
+            <div class="skill-card">
+                <span class="skill-icon">❤️</span>
+                <h3>Relationships & Social Skills</h3>
+                <h4>Build Meaningful Connections</h4>
+                <p>Master building healthy relationships. Learn conflict resolution, emotional intelligence, and communication.</p>
+                <a href="relationships.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- TECHNOLOGY -->
-            <div class="category-card marketing">
-                <div class="category-header">
-                    <div class="category-icon">💻</div>
-                    <div class="category-title">
-                        <h2>Technology & Digital Skills</h2>
-                        <p>Navigate the Digital World</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Stay current with essential digital skills including basic coding, data analysis, AI tools, and cybersecurity. Learn to leverage technology for productivity, understand emerging trends, and protect your digital presence. Discover how to adapt to rapid technological change and remain relevant in the digital age.
-                </div>
-                <a href="technology.html" class="category-link">Read More →</a>
+
+            <!-- Technology -->
+            <div class="skill-card">
+                <span class="skill-icon">💻</span>
+                <h3>Technology & Digital Skills</h3>
+                <h4>Navigate the Digital World</h4>
+                <p>Stay current with coding, data analysis, AI tools, and cybersecurity. Adapt to rapid technological change.</p>
+                <a href="technology.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- CRITICAL THINKING -->
-            <div class="category-card psychology">
-                <div class="category-header">
-                    <div class="category-icon">🔍</div>
-                    <div class="category-title">
-                        <h2>Critical Thinking & Problem Solving</h2>
-                        <p>Think More Effectively</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Develop analytical skills, logical reasoning, and systematic problem-solving approaches. Learn to identify biases, evaluate evidence, and make better decisions. Understand frameworks for complex problem solving, creative thinking techniques, and how to approach challenges strategically and systematically.
-                </div>
-                <a href="critical-thinking.html" class="category-link">Read More →</a>
+
+            <!-- Critical Thinking -->
+            <div class="skill-card">
+                <span class="skill-icon">🔍</span>
+                <h3>Critical Thinking & Problem Solving</h3>
+                <h4>Think More Effectively</h4>
+                <p>Develop analytical skills and systematic problem-solving approaches. Learn to identify biases and evaluate evidence.</p>
+                <a href="critical-thinking.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- CREATIVITY -->
-            <div class="category-card marketing">
-                <div class="category-header">
-                    <div class="category-icon">🎨</div>
-                    <div class="category-title">
-                        <h2>Creativity & Innovation</h2>
-                        <p>Unleash Your Creative Potential</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Learn techniques for generating ideas, overcoming creative blocks, and thinking innovatively. Understand design thinking, brainstorming methods, and creative problem solving. Discover how to cultivate creativity, implement innovative solutions, and bring fresh perspectives to challenges in any field or industry.
-                </div>
-                <a href="creativity.html" class="category-link">Read More →</a>
+
+            <!-- Creativity -->
+            <div class="skill-card">
+                <span class="skill-icon">🎨</span>
+                <h3>Creativity & Innovation</h3>
+                <h4>Unleash Your Creative Potential</h4>
+                <p>Learn techniques for generating ideas and thinking innovatively. Understand design thinking and creative problem solving.</p>
+                <a href="creativity.html" class="read-more">Read More →</a>
             </div>
-            
-            <!-- FINANCIAL PLANNING -->
-            <div class="category-card finance">
-                <div class="category-header">
-                    <div class="category-icon">📊</div>
-                    <div class="category-title">
-                        <h2>Financial Planning & Retirement</h2>
-                        <p>Secure Your Future</p>
-                    </div>
-                </div>
-                <div class="category-description">
-                    Master comprehensive financial planning including retirement strategies, estate planning, insurance needs, and tax optimization. Learn to create detailed financial plans, set retirement goals, and build portfolios aligned with life stages. Understand social security, pension options, and creating sustainable retirement income.
-                </div>
-                <a href="financial-planning.html" class="category-link">Read More →</a>
+
+            <!-- Financial Planning -->
+            <div class="skill-card">
+                <span class="skill-icon">📊</span>
+                <h3>Financial Planning & Retirement</h3>
+                <h4>Secure Your Future</h4>
+                <p>Master comprehensive financial planning including retirement strategies, estate planning, and tax optimization.</p>
+                <a href="financial-planning.html" class="read-more">Read More →</a>
             </div>
         </div>
     </div>
-    
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Knowledge Hub. All Rights Reserved.</p>
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
+        <div class="footer-content">
+            <p>&copy; 2025 Knowledge Hub. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+            <p class="footer-text">Empowering learners worldwide with quality educational content</p>
         </div>
-        <p style="margin-top: 1rem; opacity: 0.8;">Empowering learners worldwide with quality educational content</p>
     </footer>
 </body>
 </html>
